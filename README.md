@@ -18,4 +18,4 @@ e.g.
 ```ssh-keygen -t rsa```
 
 * run the script `transfer.sh` and add the needed data
-* for WordPress adjust the receiving system wp-config.php to reflect database user / name
+* for WordPress adjust the recieving system wp-config.php to reflect database user / name
