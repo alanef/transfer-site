@@ -6,7 +6,7 @@ Simple basic script to move a website across servers with SSH
 * the sending website is located in /home
 * the website has a single mysql database  which has a user the same name as the directory in /home and has the same password
 ## Installation
-Download and install the script on your path
+Download and install the script on your path of the sending system
 e.g.
 
 ```sudo wget https://raw.githubusercontent.com/alanef/transfer-site/master/transfer.sh -O /usr/local/sbin/transfer.sh|sudo chmod +x /usr/local/sbin/transfer.sh```
