@@ -23,3 +23,7 @@ cat /tmp/${account}.tar.gz | ssh $server "cd ${dir};tar -zxf -"
 
 rm -rf /tmp/$account.tar.gz
 rm -rf /tmp/${account}_db.sql
+
+ssh $server "cd ${dir}; wp config set DB_NAME \"${database2}i\""
+ssh $server "cd ${dir}; wp config set DB_USER \"${user2}\""
+
