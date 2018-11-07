@@ -5,6 +5,8 @@ Simple basic script to move a website across servers with SSH
 * you have set up ssh access to the receiving server, and added the public_key
 * the sending website is located in public_html with a directory ( referred to as account ) within /home   e.g. `/home/account/public_html`
 * the website has a single mysql database  which has a user the same name as the directory in /home and has the same password
+* the site is WordPress
+* wp cli is installed on target
 ## Installation
 Download and install the script on your path of the sending system
 e.g.
