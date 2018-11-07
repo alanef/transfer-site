@@ -14,12 +14,12 @@ read -er -p "To target directory e.g. subdomain or public_html: " dir
 if [ -n "$db1" ] 
 then
   mysqldump --add-drop-table --user="$account" --password="${pass}" "$db1" > /tmp/"${account}_db.sql"
-  ssh "$server" "mysql --user=\"$user2\" --password=\"${pass}\" \"$database2\" " < "/tmp/${account}_db.sql"
+  ssh "$server" "mysql --user=\"$user2\" --password=\"${pass}\" \"$database2\" --" < "/tmp/${account}_db.sql"
   rm -rf /tmp/"${account}_db.sql"
 fi
 
 tar -czf /tmp/"${account}.tar.gz" -C "/home/$account/public_html" .
-ssh "$server" "cd ${dir};tar -zxf " < "/tmp/${account}.tar.gz"
+ssh "$server" "cd ${dir};tar -zxf -" < "/tmp/${account}.tar.gz"
 
 
 rm -rf "/tmp/$account.tar.gz"
