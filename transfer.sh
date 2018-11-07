@@ -24,8 +24,8 @@ cat /tmp/${account}.tar.gz | ssh $server "cd ${dir};tar -zxf -"
 
 rm -rf /tmp/$account.tar.gz
 
-if [[ "$wp" =~ ^([yY][eE][sS]|[yY])+$ ]] 
-then
+if [[ $wp =~ [yY](es)* ]]
+then 
   ssh $server "cd ${dir}; wp config set DB_NAME \"${database2}i\""
   ssh $server "cd ${dir}; wp config set DB_USER \"${user2}\""
 fi
