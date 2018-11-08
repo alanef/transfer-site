@@ -26,7 +26,7 @@ rm -rf "/tmp/$account.tar.gz"
 
 if [[ $wp =~ [yY](es)* ]]
 then 
-  ssh "$server" "cd \"${dir}\"; wp config set DB_NAME \"${database2}i\""
+  ssh "$server" "cd \"${dir}\"; wp config set DB_NAME \"${database2}\""
   ssh "$server" "cd \"${dir}\"; wp config set DB_USER \"${user2}\""
 fi
 
