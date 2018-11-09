@@ -3,6 +3,7 @@ read -er -p  "From Account /home/account, without /home/: " account
 read -er -p "From Database ( blank for none ): " db1
 if [ -n "$db1" ] 
 then
+  read -er -p "From Database User ( blank for sames as account ): " user1
   read -er -p "DB Pasword ( same on both): " pass
   read -er -p "To db name: " database2
   read -er -p "To db user: " user2
@@ -11,9 +12,14 @@ fi
 read -er -p "To server account@host: "  server
 read -er -p "To target directory e.g. subdomain or public_html: " dir
 
+if [ -n "$user1" ]
+then
+  user1 = "$account"
+fi
+
 if [ -n "$db1" ] 
 then
-  mysqldump --add-drop-table --user="$account" --password="${pass}" "$db1" > /tmp/"${account}_db.sql"
+  mysqldump --add-drop-table --user="$user1" --password="${pass}" "$db1" > /tmp/"${account}_db.sql"
   ssh "$server" "mysql --user=\"$user2\" --password=\"${pass}\" \"$database2\" --" < "/tmp/${account}_db.sql"
   rm -rf /tmp/"${account}_db.sql"
 fi
