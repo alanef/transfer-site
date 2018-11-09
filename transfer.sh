@@ -10,7 +10,12 @@ then
   read -er -p "Wordpress and wp cli on remote(y/n): " wp
 fi
 read -er -p "To server account@host: "  server
-read -er -p "To target directory e.g. subdomain or public_html: " dir
+read -er -p "To target directory relative to ssh login e.g. subdomain ( or use blank for public_html ): " dir
+
+if [ -n "$dir" ]
+then
+  dir = "public_html"
+fi
 
 if [ -n "$user1" ]
 then
