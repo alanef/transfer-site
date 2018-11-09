@@ -12,12 +12,12 @@ fi
 read -er -p "To server account@host: "  server
 read -er -p "To target directory relative to ssh login e.g. subdomain ( or use blank for public_html ): " dir
 
-if [ -n "$dir" ]
+if [ -z "$dir" ]
 then
   dir="public_html"
 fi
 
-if [ -n "$user1" ]
+if [ -z "$user1" ]
 then
   user1="$account"
 fi
