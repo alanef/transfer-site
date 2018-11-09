@@ -11,7 +11,7 @@ Simple basic script to move a website across servers with SSH
 Download and install the script on your path of the sending system
 e.g.
 
-```sudo wget https://raw.githubusercontent.com/alanef/transfer-site/master/transfer.sh -O /usr/local/sbin/transfer.sh; sudo chmod +x /usr/local/sbin/transfer.sh```
+```sudo wget --no-cache https://raw.githubusercontent.com/alanef/transfer-site/master/transfer.sh -O /usr/local/sbin/transfer.sh; sudo chmod +x /usr/local/sbin/transfer.sh```
 
 ## Usage
 * set up the account on the recieving system
