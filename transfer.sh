@@ -14,12 +14,12 @@ read -er -p "To target directory relative to ssh login e.g. subdomain ( or use b
 
 if [ -n "$dir" ]
 then
-  dir = "public_html"
+  dir="public_html"
 fi
 
 if [ -n "$user1" ]
 then
-  user1 = "$account"
+  user1="$account"
 fi
 
 if [ -n "$db1" ] 
